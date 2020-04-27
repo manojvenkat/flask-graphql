@@ -1,3 +1,11 @@
+Steps to run :
+1. Make sure you have python3 & pip3. If not upgrade to both.
+2. Then ``sh setup.sh``. That should start the server.
+3. Go to ``http://0.0.0.0:5000/graphql``
+4. Type the below api use cases into the graphQL query tool.
+5. You can do the same thing using curl command or Postman or any rest client as well.
+
+
 Use the same resolver for all 4 cases. 
 
 There are four columns to use : 
@@ -14,6 +22,7 @@ There are four columns to use :
 
 api use case: 1
 
+``
 {
   analyzeTrackingRecords(groupBy: ["os", "country"], orderBy: ["channel desc"], sumOf: ["impressions", "clicks"], fromTime: "2017-5-10", toTime: "2017-05-20") {
     column {
@@ -22,9 +31,11 @@ api use case: 1
     }
   }
 }
+``
 
 api use case: 2
 
+``
 {
   analyzeTrackingRecords(groupBy: ["date"], orderBy: ["date asc"], sumOf: ["installs"], fromTime:"2017-05-23", toTime:""){
     column{
@@ -33,9 +44,11 @@ api use case: 2
     }
   }
 }
+``
 
 api use case: 3
 
+``
 {
   analyzeTrackingRecords(groupBy: ["os"], orderBy: ["os asc"], sumOf: ["revenue"], fromTime:"2017-06-01", toTime:"2017-06-01"){
     column{
@@ -44,9 +57,11 @@ api use case: 3
     }
   }
 }
+``
 
-api use case: 4  
+api use case: 4 
 
+``
 {
   analyzeTrackingRecords(groupBy: ["os"], orderBy: ["spend_by_installs desc"], sumOf: ["revenue"], fromTime:"2017-06-01", toTime:"2017-06-01", ratioOf: ["spend:installs"]){
     column{
@@ -55,3 +70,4 @@ api use case: 4
     }
   }
 }
+``
