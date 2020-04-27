@@ -6,6 +6,11 @@ Steps to run :
 5. You can do the same thing using curl command or Postman or any rest client as well.
 
 
+**Disclaimer** 
+
+**A lot of things that make this code production ready are pending. For example, SQL injection prevention, bad input handling in some cases and adding tests.**
+
+
 Use the same resolver for all 4 cases. 
 
 There are four columns to use : 
