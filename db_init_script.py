@@ -1,12 +1,8 @@
 from application.models import TrackingRecord
 from datetime import datetime
-from application import create_app
-from flask_sqlalchemy import SQLAlchemy
 
 
-def create_all():
-    app = create_app()
-    db = SQLAlchemy(app)
+def populate_db(db):
     csv_file = open("./dataset.csv")
     lines = csv_file.readlines()[1:]
     for line in lines:
@@ -26,7 +22,3 @@ def create_all():
 
     db.session.commit()
     print("DB initialized successfully.. Exiting..")
-
-
-if __name__ == "__main__":
-    create_all()
